@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, Bot, Cloud, ShieldCheck, Sparkles, UploadCloud, Users } from 'lucide-react';
+import { ArrowRight, Bot, Cloud, Quote, ShieldCheck, Sparkles, UploadCloud, Users } from 'lucide-react';
 import { Footer } from './footer';
 import { TopNavbar } from './top-navbar';
 
@@ -46,6 +46,28 @@ export function MarketingLanding() {
                 <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">{body as string}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-8">
+          <div className="rounded-[36px] border border-slate-200/60 bg-white/80 p-8 shadow-[0_35px_120px_-45px_rgba(15,23,42,0.22)] backdrop-blur-xl dark:border-white/10 dark:bg-white/5">
+            <div className="max-w-2xl">
+              <div className="text-sm font-semibold uppercase tracking-[0.22em] text-sky-600 dark:text-sky-300">Social proof</div>
+              <h2 className="mt-3 text-3xl font-semibold text-slate-950 dark:text-white">People like this because it feels like software they can trust.</h2>
+            </div>
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              {[
+                ['“Finally a Telegram storage UI that doesn’t feel cursed.”', 'Indie infra operator'],
+                ['“The onboarding flow makes this way easier to hand to teammates.”', 'Growth engineer'],
+                ['“It feels like MultCloud for nerds who want control.”', 'Devtools founder'],
+              ].map(([quote, role]) => (
+                <div key={quote} className="rounded-[28px] border border-slate-200/70 bg-slate-50/80 p-5 dark:border-white/10 dark:bg-slate-950/40">
+                  <Quote className="h-5 w-5 text-sky-500 dark:text-sky-300" />
+                  <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">{quote}</p>
+                  <div className="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">{role}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 

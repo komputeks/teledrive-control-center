@@ -1,13 +1,14 @@
 'use client';
 
 import Link from 'next/link';
-import { Activity, CreditCard, Home, Settings, Shield, Users } from 'lucide-react';
+import { Activity, CreditCard, DollarSign, Home, Settings, Shield, Users } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import type { Route } from 'next';
 
 const links = [
   { href: '/app' as Route, label: 'Dashboard', icon: Home },
   { href: '/pricing' as Route, label: 'Plans & usage', icon: CreditCard },
+  { href: '/billing' as Route, label: 'Billing', icon: DollarSign },
   { href: '/team' as Route, label: 'Team members', icon: Users },
   { href: '/activity' as Route, label: 'Activity', icon: Activity },
   { href: '/settings' as Route, label: 'Settings', icon: Settings },

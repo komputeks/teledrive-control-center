@@ -25,6 +25,28 @@ export default function PricingPage() {
             </div>
           ))}
         </div>
+
+        <div className="mt-10 rounded-[32px] border border-slate-200/60 bg-white/80 p-6 shadow-[0_20px_70px_-35px_rgba(15,23,42,0.2)] backdrop-blur-xl dark:border-white/10 dark:bg-white/5">
+          <h2 className="text-2xl font-semibold text-slate-950 dark:text-white">Usage analytics preview</h2>
+          <div className="mt-6 grid gap-4 lg:grid-cols-4">
+            {[
+              ['Uploads this month', '148'],
+              ['Storage tracked', '1.2 TB'],
+              ['Signed links created', '42'],
+              ['Active team members', '3'],
+            ].map(([label, value]) => (
+              <div key={label} className="rounded-[24px] border border-slate-200/70 bg-slate-50/80 p-4 dark:border-white/10 dark:bg-slate-950/40">
+                <div className="text-sm text-slate-500 dark:text-slate-400">{label}</div>
+                <div className="mt-2 text-2xl font-semibold text-slate-950 dark:text-white">{value}</div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 h-48 rounded-[24px] border border-slate-200/70 bg-[linear-gradient(180deg,rgba(14,165,233,0.08),transparent),linear-gradient(90deg,transparent_0%,transparent_10%,rgba(148,163,184,0.15)_10%,rgba(148,163,184,0.15)_11%,transparent_11%,transparent_20%,rgba(148,163,184,0.15)_20%,rgba(148,163,184,0.15)_21%,transparent_21%)] dark:border-white/10">
+            <div className="flex h-full items-end gap-4 px-6 pb-6">
+              {[35, 55, 48, 72, 64, 84, 92].map((height, index) => <div key={index} className="flex-1 rounded-t-2xl bg-gradient-to-t from-sky-500 to-cyan-300" style={{ height: `${height}%` }} />)}
+            </div>
+          </div>
+        </div>
       </main>
       <Footer />
     </div>
