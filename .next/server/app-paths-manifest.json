@@ -1,0 +1,22 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/activity/page": "app/activity/page.js",
+  "/api/next/download/[slug]/route": "app/api/next/download/[slug]/route.js",
+  "/api/next/share/verify/[slug]/route": "app/api/next/share/verify/[slug]/route.js",
+  "/api/next/storage/buckets/route": "app/api/next/storage/buckets/route.js",
+  "/api/next/storage/files/route": "app/api/next/storage/files/route.js",
+  "/api/next/storage/folders/route": "app/api/next/storage/folders/route.js",
+  "/api/next/storage/share-links/route": "app/api/next/storage/share-links/route.js",
+  "/api/next/storage/transfers/route": "app/api/next/storage/transfers/route.js",
+  "/api/next/telegram/integrations/route": "app/api/next/telegram/integrations/route.js",
+  "/api/next/workers/browser-upload/route": "app/api/next/workers/browser-upload/route.js",
+  "/api/next/workers/url-import/route": "app/api/next/workers/url-import/route.js",
+  "/app/page": "app/app/page.js",
+  "/billing/page": "app/billing/page.js",
+  "/faq/page": "app/faq/page.js",
+  "/page": "app/page.js",
+  "/pricing/page": "app/pricing/page.js",
+  "/settings/page": "app/settings/page.js",
+  "/team/page": "app/team/page.js"
+}

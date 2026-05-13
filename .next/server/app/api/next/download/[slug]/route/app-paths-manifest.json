@@ -1,0 +1,3 @@
+{
+  "/api/next/download/[slug]/route": "app/api/next/download/[slug]/route.js"
+}

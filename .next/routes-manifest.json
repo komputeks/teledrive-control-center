@@ -1,0 +1,170 @@
+{
+  "version": 3,
+  "pages404": true,
+  "appType": "app",
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "onMatchHeaders": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/api/next/download/[slug]",
+      "regex": "^/api/next/download/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/api/next/download/(?<nxtPslug>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/next/share/verify/[slug]",
+      "regex": "^/api/next/share/verify/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/api/next/share/verify/(?<nxtPslug>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/activity",
+      "regex": "^/activity(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/activity(?:/)?$"
+    },
+    {
+      "page": "/api/next/storage/buckets",
+      "regex": "^/api/next/storage/buckets(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/next/storage/buckets(?:/)?$"
+    },
+    {
+      "page": "/api/next/storage/files",
+      "regex": "^/api/next/storage/files(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/next/storage/files(?:/)?$"
+    },
+    {
+      "page": "/api/next/storage/folders",
+      "regex": "^/api/next/storage/folders(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/next/storage/folders(?:/)?$"
+    },
+    {
+      "page": "/api/next/storage/share-links",
+      "regex": "^/api/next/storage/share\\-links(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/next/storage/share\\-links(?:/)?$"
+    },
+    {
+      "page": "/api/next/storage/transfers",
+      "regex": "^/api/next/storage/transfers(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/next/storage/transfers(?:/)?$"
+    },
+    {
+      "page": "/api/next/telegram/integrations",
+      "regex": "^/api/next/telegram/integrations(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/next/telegram/integrations(?:/)?$"
+    },
+    {
+      "page": "/api/next/workers/browser-upload",
+      "regex": "^/api/next/workers/browser\\-upload(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/next/workers/browser\\-upload(?:/)?$"
+    },
+    {
+      "page": "/api/next/workers/url-import",
+      "regex": "^/api/next/workers/url\\-import(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/next/workers/url\\-import(?:/)?$"
+    },
+    {
+      "page": "/app",
+      "regex": "^/app(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/app(?:/)?$"
+    },
+    {
+      "page": "/billing",
+      "regex": "^/billing(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/billing(?:/)?$"
+    },
+    {
+      "page": "/faq",
+      "regex": "^/faq(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/faq(?:/)?$"
+    },
+    {
+      "page": "/pricing",
+      "regex": "^/pricing(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/pricing(?:/)?$"
+    },
+    {
+      "page": "/settings",
+      "regex": "^/settings(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/settings(?:/)?$"
+    },
+    {
+      "page": "/team",
+      "regex": "^/team(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/team(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

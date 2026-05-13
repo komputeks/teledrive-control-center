@@ -1,0 +1,22 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/activity/page": "/activity",
+  "/api/next/download/[slug]/route": "/api/next/download/[slug]",
+  "/api/next/share/verify/[slug]/route": "/api/next/share/verify/[slug]",
+  "/api/next/storage/buckets/route": "/api/next/storage/buckets",
+  "/api/next/storage/files/route": "/api/next/storage/files",
+  "/api/next/storage/folders/route": "/api/next/storage/folders",
+  "/api/next/storage/share-links/route": "/api/next/storage/share-links",
+  "/api/next/storage/transfers/route": "/api/next/storage/transfers",
+  "/api/next/telegram/integrations/route": "/api/next/telegram/integrations",
+  "/api/next/workers/browser-upload/route": "/api/next/workers/browser-upload",
+  "/api/next/workers/url-import/route": "/api/next/workers/url-import",
+  "/app/page": "/app",
+  "/billing/page": "/billing",
+  "/faq/page": "/faq",
+  "/page": "/",
+  "/pricing/page": "/pricing",
+  "/settings/page": "/settings",
+  "/team/page": "/team"
+}
