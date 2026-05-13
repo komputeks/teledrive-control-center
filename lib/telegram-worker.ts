@@ -1,4 +1,4 @@
-import { supabaseAdmin } from './supabase-admin';
+import { hasSupabaseEnv, supabaseAdmin } from './supabase-admin';
 import { encryptValue } from './crypto';
 
 export async function queueTelegramUploadJob(params: {
@@ -10,6 +10,10 @@ export async function queueTelegramUploadJob(params: {
   size_bytes: number;
   mime_type: string;
 }) {
+  if (!hasSupabaseEnv) {
+    throw new Error('Supabase environment is not configured for this deployment.');
+  }
+
   const { data: fileRow, error: fileError } = await supabaseAdmin
     .from('storage_files')
     .insert({
@@ -76,6 +80,15 @@ export async function queueTelegramUploadJob(params: {
 }
 
 export async function buildDownloadPayload(slug: string) {
+  if (!hasSupabaseEnv) {
+    return {
+      share: { slug, enabled: false, expires_at: null },
+      file: { id: 0, name: 'unavailable.bin', mime_type: 'application/octet-stream', size_bytes: 0 },
+      chunks: [],
+      messageMap: [],
+    };
+  }
+
   const { data: share, error: shareError } = await supabaseAdmin
     .from('share_links')
     .select('*, storage_files(*)')
