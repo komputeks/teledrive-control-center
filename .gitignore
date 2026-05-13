@@ -1,0 +1,15 @@
+node_modules
+.dist
+.dist-ssr
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+.env
+.env.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+dist
+.vercel
+vercel.json
