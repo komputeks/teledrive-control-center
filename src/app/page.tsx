@@ -1,5 +1,5 @@
-import { DashboardShell } from '@/components-next/dashboard-shell';
+import { MarketingLanding } from '@/components-next/marketing-landing';
 
 export default function HomePage() {
-  return <DashboardShell />;
+  return <MarketingLanding />;
 }
