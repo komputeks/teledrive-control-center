@@ -1,72 +1,83 @@
 # TeleDrive Next Control Center
 
-TeleDrive Next Control Center is a phase 3 Next.js 16 App Router migration of a Telegram-backed object storage control plane inspired by tg-s3, rclone-style web workflows, and MultCloud-like transfer orchestration.
+TeleDrive Next Control Center is a clean Next.js App Router codebase for a Telegram-backed object storage platform inspired by tg-s3, rclone-style browser workflows, and MultCloud-like transfer management.
 
-## What is included now
+## Production stack
 
-- Next.js 16 App Router structure
-- Route handlers under `app/api/next/...`
-- Worker-style upload endpoints for:
-  - browser multipart uploads
-  - URL import jobs
-- Telegram upload worker design
-- AES-GCM encrypted token-reference handling server-side
-- Chunk manifest planning tables
-- Telegram message mapping tables
-- Signed-link creation and verification endpoints
-- Download reconstruction planning endpoint
-- Supabase-backed storage metadata
-- GitHub Actions CI ready for production workflows
+- Next.js 16 App Router
+- React 19
+- TypeScript
+- Tailwind CSS v4
+- Supabase
+- Vercel
+- GitHub Actions CI
 
-## Core architecture
+## Active application structure
 
-### App Router frontend
-- `app/page.tsx`
-- `components-next/workspace-dashboard.tsx`
+### Frontend
+- `src/app/page.tsx`
+- `src/app/layout.tsx`
+- `src/app/globals.css`
+- `components-next/*`
+
+### Server utilities
+- `lib/supabase-admin.ts`
+- `lib/crypto.ts`
+- `lib/telegram-worker.ts`
 
 ### Route handlers
-- `/api/next/storage/buckets`
-- `/api/next/storage/files`
-- `/api/next/storage/folders`
-- `/api/next/storage/transfers`
-- `/api/next/storage/share-links`
-- `/api/next/telegram/integrations`
-- `/api/next/workers/browser-upload`
-- `/api/next/workers/url-import`
-- `/api/next/download/[slug]`
-- `/api/next/share/verify/[slug]`
+- `src/app/api/next/storage/buckets`
+- `src/app/api/next/storage/files`
+- `src/app/api/next/storage/folders`
+- `src/app/api/next/storage/transfers`
+- `src/app/api/next/storage/share-links`
+- `src/app/api/next/telegram/integrations`
+- `src/app/api/next/workers/browser-upload`
+- `src/app/api/next/workers/url-import`
+- `src/app/api/next/download/[slug]`
+- `src/app/api/next/share/verify/[slug]`
 
-### Worker design
-Each upload job creates:
-1. `storage_files` row
-2. `storage_transfers` row
-3. `file_chunk_manifest` rows
-4. `telegram_message_map` rows
+## Current capabilities
 
-This is the bridge toward a true Telegram-backed object storage engine.
+- Bucket and folder management
+- Browser upload worker ingestion
+- URL import worker ingestion
+- Transfer queue metadata and state controls
+- Signed-link generation and verification
+- Download reconstruction planning endpoint
+- Telegram chunk manifest planning
+- Telegram message mapping model
+- Encrypted token-reference handling design
 
-## Remaining implementation steps for full Telegram backend
-- Persist encrypted real bot tokens in a secrets vault or dedicated encrypted table
-- Upload each chunk to Telegram via Bot API
-- Store returned message IDs and file IDs in `telegram_message_map`
-- Stream chunk downloads from Telegram and reconstruct binary responses
-- Enforce signed link passwords, expirations, and download counters server-side
-- Add queue runners / cron / durable background processing
+## Database tables used
 
-## Environment notes
-Required environment variables are expected in deployment:
-- `NEXT_PUBLIC_SUPABASE_URL`
-- `SUPABASE_SERVICE_ROLE_KEY`
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-- `TELEDRIVE_ENCRYPTION_KEY`
+- `storage_buckets`
+- `storage_files`
+- `storage_transfers`
+- `storage_folders`
+- `share_links`
+- `telegram_integrations`
+- `file_chunk_manifest`
+- `telegram_message_map`
 
-## CI
-GitHub Actions should run:
-- install
-- lint
-- typecheck
-- build
-- secret scanning extensions later
+## Next implementation targets
+
+- Upload chunks to Telegram Bot API
+- Persist encrypted real bot secrets securely
+- Reconstruct and stream downloads from Telegram
+- Enforce password-protected signed links and download counters
+- Add background queue runners / cron / durable jobs
+- Add team workspaces and permissions
+
+## Local development
+
+```bash
+npm install
+npm run typecheck
+npm run build
+npm run dev
+```
 
 ## Deployment
-Deploy on Vercel as a Next.js application.
+
+This repository is intended to be connected directly to Vercel as a Next.js project.
