@@ -2,8 +2,8 @@ import './globals.css';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'TeleDrive Next Control Center',
-  description: 'Next.js App Router control plane for Telegram-backed object storage workflows.',
+  title: 'TeleDrive — Telegram Storage SaaS for Nerds',
+  description: 'A friendly SaaS-style control center for Telegram-backed storage, uploads, links, and transfer workflows.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
